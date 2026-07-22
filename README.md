@@ -27,3 +27,7 @@ npm run dev
 - TypeScript
 - React
 - Tailwind CSS
+
+
+live demo of web app 
+https://ai-study-planner-999.lovable.app
