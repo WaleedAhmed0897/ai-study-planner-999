@@ -110,7 +110,7 @@ function QuizPage() {
                 <button className="flex-1 text-left" onClick={() => setActiveId(q.id)}>
                   <p className="text-sm font-medium truncate">{q.topic}</p>
                   <p className="text-xs text-muted-foreground">
-                    {q.total} q · {q.score != null ? `${Math.round((q.score / q.total) * 100)}%` : "Not taken"}
+                    {q.total ?? 0} q · {q.score != null && q.total ? `${Math.round((q.score / q.total) * 100)}%` : "Not taken"}
                   </p>
                 </button>
                 <button
