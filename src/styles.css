@@ -182,3 +182,40 @@
 @utility gradient-warm {
   background-image: var(--gradient-warm);
 }
+
+@utility gradient-parchment {
+  background-image: var(--gradient-parchment);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@utility shimmer-bar {
+  background: linear-gradient(90deg,
+    var(--color-primary) 0%,
+    color-mix(in oklab, var(--color-primary) 50%, var(--color-warning)) 50%,
+    var(--color-primary) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@utility count-up { animation: count-up 0.5s ease-out both; }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+@utility float-slow { animation: float-slow 6s ease-in-out infinite; }
+
+@keyframes ringPulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-primary) 45%, transparent); }
+  70%  { box-shadow: 0 0 0 14px color-mix(in oklab, var(--color-primary) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-primary) 0%, transparent); }
+}
+@utility ring-pulse { animation: ringPulse 2.4s ease-out infinite; }
+
